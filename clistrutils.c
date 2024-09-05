@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include"strUtils.h"
+
 #define MAXSTRLEN 100
 
 typedef enum {
@@ -37,7 +38,8 @@ int main(int argc, char* argv[]) {
                 printf("%s\n", strCat(*pString1, *pString2));
                 return 0;
             case end:
-                printf("%s\n", strEnd(*pString1, *pString2));
+                int result = strEnd(*pString1, *pString2);
+                printf((result == 1) ? "TRUE\n" : "FALSE\n", result);
                 return 0;
             default:
                 printf("ERROR: Invalid inputs\n");
@@ -46,4 +48,3 @@ int main(int argc, char* argv[]) {
     }
     return 0;
 }
-
