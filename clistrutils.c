@@ -32,7 +32,7 @@ int main(int argc, char* argv[]) {
     if (argv[1][0] == '-') {
         switch((Opt)argv[1][1]) {
             case len:
-                printf("%s\n", strLen(*pString1));
+                printf("%d\n", strLen(*pString1));
                 return 0;
             case cat:
                 printf("%s\n", strCat(*pString1, *pString2));
