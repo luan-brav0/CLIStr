@@ -12,9 +12,9 @@ typedef enum {
 int printUsage() {
     printf("String Utilities\n\n");
     printf("Usage:\n");
-    printf("strutils -l <string>            - Get string length \n");
-    printf("strutils -c <string1> <string2> - Concatenate 2 strings \n");
-    printf("strutils -e <string> <suffix>   - Check if string ends with suffix \n");
+    printf("clistrutils -l <string>            - Get string length \n");
+    printf("clistrutils -c <string1> <string2> - Concatenate 2 strings \n");
+    printf("clistrutils -e <string> <suffix>   - Check if string ends with suffix \n");
     return 1;
 }
 
