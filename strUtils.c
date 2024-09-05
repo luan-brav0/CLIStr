@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "strUtils.h"
 
 int strLen(char* c) {
@@ -38,7 +40,6 @@ char* strCat(char* s, char* t) {
     printf("Attempt to concat:\n%s\nand\n%s\n", s, t);
     for (; *s != '\0'; pTemp++, s++)
         *pTemp = *s;
-    }
     for (; *t != '\0'; pTemp++, t++)
         *pTemp = *t;
     return temp;
