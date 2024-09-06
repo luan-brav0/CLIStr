@@ -13,8 +13,5 @@ This is what I came up with quickly just to put out what I got so far from Chapt
 
 ## Building from source
 ```sh
-gcc -c strUtils.c
-ar rcs libstrUtils.a strUtils.o
-
-gcc -o clistrutils clistrutils.c -L. -strUtils
+make clean; make
 ```
