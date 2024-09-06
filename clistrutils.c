@@ -23,7 +23,7 @@ int main(int argc, char* argv[]) {
      * cat
      * end */
     // print usage and return error
-    if (argc < 3 || strLen(argv[1]) != 2)
+    if (argc < 3 || argc > 4|| strLen(argv[1]) != 2)
        return printUsage();
 
     char** pString1 = argv+2;
@@ -32,14 +32,18 @@ int main(int argc, char* argv[]) {
     if (argv[1][0] == '-') {
         switch((Opt)argv[1][1]) {
             case len:
-                printf("%d\n", strLen(*pString1));
+                if (argv[1])
+                    printf("%ld\n", strLen(*pString1));
                 return 0;
             case cat:
-                printf("%s\n", strCat(*pString1, *pString2));
+                if (argv[1] && argv[2])
+                    printf("%s\n", strCat(*pString1, *pString2));
                 return 0;
             case end:
-                int result = strEnd(*pString1, *pString2);
-                printf((result == 1) ? "TRUE\n" : "FALSE\n", result);
+                if (argv[1] && argv[2]) {
+                    int result = strEnd(*pString1, *pString2);
+                    printf("%s\n", (result == 1) ? "TRUE" : "FALSE");
+                }
                 return 0;
             default:
                 printf("ERROR: Invalid inputs\n");
