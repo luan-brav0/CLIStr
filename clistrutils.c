@@ -23,7 +23,7 @@ int main(int argc, char* argv[]) {
      * cat
      * end */
     // print usage and return error
-    if (argc < 3)
+    if (argc < 3 || strLen(argv[1]) != 2)
        return printUsage();
 
     char** pString1 = argv+2;
