@@ -11,7 +11,7 @@ size_t strLen(char* c) {
 int strEnd(char* s, char* t) {
     size_t sLen = strLen(s);
     size_t tLen = strLen(t);
-    printf("sLen: %d   tLen: %d", sLen, tLen);
+    printf("sLen: %ld   tLen: %ld", sLen, tLen);
     if (s == NULL || t == NULL) {
         printf("ERROR: strEnd recived at least one null pointer\n");
         return 0;
