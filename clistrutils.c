@@ -32,18 +32,26 @@ int main(int argc, char* argv[]) {
     if (argv[1][0] == '-') {
         switch((Opt)argv[1][1]) {
             case len:
-                if (argv[1])
+                if (argv[1]) {
+                    printf("ERROR: Missing argument\n");
+                    return 1;
+                }
                     printf("%ld\n", strLen(*pString1));
                 return 0;
             case cat:
-                if (argv[1] && argv[2])
-                    printf("%s\n", strCat(*pString1, *pString2));
+                if (!(argv[1] && argv[2])) {
+                    printf("ERROR: Missing arguments\n");
+                    return 1;
+                }
+                printf("%s\n", strCat(*pString1, *pString2));
                 return 0;
             case end:
-                if (argv[1] && argv[2]) {
-                    int result = strEnd(*pString1, *pString2);
-                    printf("%s\n", (result == 1) ? "TRUE" : "FALSE");
+                if (!(argv[1] && argv[2])) {
+                    printf("ERROR: Missing arguments\n");
+                    return 1;
                 }
+                int result = strEnd(*pString1, *pString2);
+                printf("%s\n", (result == 1) ? "TRUE" : "FALSE");
                 return 0;
             default:
                 printf("ERROR: Invalid inputs\n");
